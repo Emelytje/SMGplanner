@@ -1,0 +1,575 @@
+/* =========================
+   RESET / BASIS
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f3f6fb;
+  color: #0f172a;
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR (DESKTOP)
+   ========================= */
+.sidebar {
+  width: 250px;
+  background: #0f172a;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  min-height: 100vh;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+.sidebar-logo span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+.sidebar-section-title {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  transition: background 0.15s;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a:focus {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.sidebar-bottom {
+  border-top: 1px solid #1f2937;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+.main-content {
+  flex: 1;
+  min-width: 0; /* belangrijk bij flex + FullCalendar */
+  padding: 2rem 2.5rem;
+}
+
+.topbar h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   CARDS
+   ========================= */
+.card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  margin-bottom: 0.75rem;
+}
+
+.card h3 {
+  margin-top: 0.75rem;
+}
+
+/* Mini cards */
+.mini-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  min-width: 190px;
+}
+
+.mini-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.btn,
+button {
+  display: inline-block;
+  border-radius: 0.55rem;
+  padding: 0.55rem 1rem;
+  border: none;
+  background: #1d4ed8;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.btn:hover,
+button:hover {
+  background: #1e40af;
+}
+
+.btn-small {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* =========================
+   FORMS
+   ========================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 550px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="time"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+select,
+textarea {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.55rem;
+  border: 1px solid #cbd5f5;
+  font-size: 0.95rem;
+  background: #ffffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+}
+
+/* =========================
+   TABLE
+   ========================= */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.55rem 0.45rem;
+  text-align: left;
+}
+
+.table th {
+  font-weight: 600;
+  background: #eff6ff;
+}
+
+/* =========================
+   ALERTS
+   ========================= */
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.alert-success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* =========================
+   FULLCALENDAR / KALENDER LAYOUT
+   ========================= */
+.calendar-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.calendar-form {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.calendar-view {
+  flex: 1;
+  min-width: 0; /* belangrijk bij FullCalendar binnen flex */
+}
+
+/* Improve touch dragging */
+.fc .fc-event,
+.reservation-block,
+.mobile-draggable {
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+/* =========================
+   MODAL
+   ========================= */
+.modal.hidden {
+  display: none;
+}
+
+.modal.open {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 10;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  min-width: 320px;
+  max-width: 420px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.4);
+}
+
+.modal-dialog h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+}
+
+.modal-dialog form {
+  max-width: 100%;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* =========================
+   POPUP EERSTE INLOG
+   ========================= */
+#profile-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#profile-popup {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+}
+
+#profile-popup h3 {
+  margin: 0 0 0.5rem;
+}
+
+#profile-popup p {
+  margin: 0 0 0.75rem;
+}
+
+#profile-popup label {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+#profile-popup input {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  margin-top: 0.25rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+#profile-popup .popup-actions {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+#profile-popup .popup-actions button {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =====================================================
+   MOBILE (<= 768px)
+   Sidebar links (smal), content rechts
+   Form + kalender onder elkaar
+   ===================================================== */
+@media (max-width: 768px) {
+  /* Sidebar blijft naast content (NIET column) */
+  .app-container {
+    flex-direction: row;
+  }
+
+  /* Sidebar niet 100% en niet sticky */
+  .sidebar {
+    width: 92px;
+    min-width: 92px;
+    padding: 0.75rem 0.5rem;
+    position: relative;
+    top: auto;
+    min-height: 100vh;
+  }
+
+  /* Sidebar compacter */
+  .sidebar-logo {
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-logo span {
+    display: none;
+  }
+
+  .sidebar-logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sidebar-nav a {
+    padding: 0.45rem 0.35rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .sidebar-section-title,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  /* Content kan krimpen (FullCalendar fix) */
+  .main-content {
+    min-width: 0;
+    padding: 1rem;
+  }
+
+  /* Form + kalender onder elkaar */
+  .calendar-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .calendar-form,
+  .calendar-view {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* iOS zoom fix */
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="datetime-local"],
+  select,
+  textarea {
+    padding: 0.75rem !important;
+    min-height: 44px !important;
+  }
+
+  button {
+    min-height: 44px !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* FullCalendar mobile tweaks */
+  .fc {
+    font-size: 0.9rem;
+  }
+
+  .fc .fc-button-primary {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .fc .fc-timegrid-slot {
+    height: 1.5em;
+  }
+
+  .topbar {
+    padding: 0.75rem;
+  }
+
+  .topbar h1 {
+    font-size: 1.25rem;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL (<= 480px)
+   ===================================================== */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 92px;
+    min-width: 92px;
+    padding: 0.6rem 0.4rem;
+  }
+
+  .sidebar-nav a {
+    padding: 0.4rem 0.3rem;
+    font-size: 0.72rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .topbar h1 {
+    font-size: 1.1rem;
+  }
+
+  .fc {
+    font-size: 0.8rem;
+  }
+
+  .fc .fc-button-primary {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .fc .fc-event {
+    padding: 0.2rem !important;
+    font-size: 0.7rem;
+  }
+
+  .fc .fc-timegrid-slot {
+    height: 1.2em;
+  }
+
+  #form_message {
+    padding: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 0.9rem;
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  select {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  button:active,
+  a:active {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+.sidebar-nav a {
+  white-space: normal !important;   /* tekst mag op meerdere regels */
+  word-break: break-word;           /* lange woorden breken */
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 1.2;
+}
